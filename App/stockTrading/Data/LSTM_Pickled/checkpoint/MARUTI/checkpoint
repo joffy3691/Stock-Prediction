@@ -1,0 +1,2 @@
+model_checkpoint_path: "MARUTI_lstm"
+all_model_checkpoint_paths: "MARUTI_lstm"

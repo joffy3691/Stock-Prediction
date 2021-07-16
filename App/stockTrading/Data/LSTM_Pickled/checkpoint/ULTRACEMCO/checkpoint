@@ -1,0 +1,2 @@
+model_checkpoint_path: "ULTRACEMCO_lstm"
+all_model_checkpoint_paths: "ULTRACEMCO_lstm"

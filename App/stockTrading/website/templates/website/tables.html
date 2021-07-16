@@ -1,0 +1,48 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Recent Trades</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Trade ID</th>
+                        <th>Symbol</th>
+                        <th>Amount (INR)</th>
+                        <th>Quantity Traded</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                        <th>Open</th>
+                        <th>Trade Open Price</th>
+                        <th>Target Price</th>
+                        <th>Trailing Stop Loss</th>
+                        <th>Trade Close Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trade in trades %}
+                    <tr>
+                        <td>{{trade.id}}</td>
+                        <td>{{trade.stock}}</td>
+                        <td>{{trade.amount}}</td>
+                        <td>{{trade.quantity}}</td>
+                        <td>{{trade.date}}</td>
+                        <td>{{trade.type}}</td>
+                        <td>{{trade.is_open}}</td>
+                        <td>{{trade.open_price}}</td>
+                        <td>{{trade.target}}</td>
+                        <td>{{trade.trailing_sl}}</td>
+                        <td>{{trade.close_price}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

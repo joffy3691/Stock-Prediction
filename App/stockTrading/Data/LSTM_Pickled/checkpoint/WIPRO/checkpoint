@@ -1,0 +1,2 @@
+model_checkpoint_path: "WIPRO_lstm"
+all_model_checkpoint_paths: "WIPRO_lstm"

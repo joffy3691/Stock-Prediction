@@ -1,0 +1,2 @@
+model_checkpoint_path: "INFY_lstm"
+all_model_checkpoint_paths: "INFY_lstm"

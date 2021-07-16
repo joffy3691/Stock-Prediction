@@ -1,0 +1,2 @@
+model_checkpoint_path: "NESTLEIND_lstm"
+all_model_checkpoint_paths: "NESTLEIND_lstm"

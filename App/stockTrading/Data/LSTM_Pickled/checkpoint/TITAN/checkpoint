@@ -1,0 +1,2 @@
+model_checkpoint_path: "TITAN_lstm"
+all_model_checkpoint_paths: "TITAN_lstm"

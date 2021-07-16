@@ -1,0 +1,2 @@
+model_checkpoint_path: "KOTAKBANK_lstm"
+all_model_checkpoint_paths: "KOTAKBANK_lstm"

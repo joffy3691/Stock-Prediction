@@ -1,0 +1,18 @@
+User Dashboard
+- Total Investment
+- Current value
+- ROI
+- No of executed trades
+
+Charts 
+- Earnings
+- Donut chart - Investment distribution
+
+Individual Stock - Singlestats 
+- ARIMA
+- LSTM
+- 
+
+Chart
+- High/Low/Open/Close
+- Projection of future

@@ -1,0 +1,2 @@
+model_checkpoint_path: "SHREECEM_lstm"
+all_model_checkpoint_paths: "SHREECEM_lstm"

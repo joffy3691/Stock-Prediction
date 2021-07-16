@@ -1,0 +1,2 @@
+model_checkpoint_path: "BAJAJFINSV_lstm"
+all_model_checkpoint_paths: "BAJAJFINSV_lstm"

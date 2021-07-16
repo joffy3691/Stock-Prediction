@@ -1,0 +1,2 @@
+model_checkpoint_path: "DIVISLAB_lstm"
+all_model_checkpoint_paths: "DIVISLAB_lstm"

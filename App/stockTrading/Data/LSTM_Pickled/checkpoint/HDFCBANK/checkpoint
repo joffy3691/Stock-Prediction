@@ -1,0 +1,2 @@
+model_checkpoint_path: "HDFCBANK_lstm"
+all_model_checkpoint_paths: "HDFCBANK_lstm"

@@ -1,0 +1,2 @@
+model_checkpoint_path: "IOC_lstm"
+all_model_checkpoint_paths: "IOC_lstm"

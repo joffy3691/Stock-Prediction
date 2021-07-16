@@ -1,0 +1,2 @@
+model_checkpoint_path: "TCS_lstm"
+all_model_checkpoint_paths: "TCS_lstm"

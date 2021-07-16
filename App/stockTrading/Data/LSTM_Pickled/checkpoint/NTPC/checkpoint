@@ -1,0 +1,2 @@
+model_checkpoint_path: "NTPC_lstm"
+all_model_checkpoint_paths: "NTPC_lstm"

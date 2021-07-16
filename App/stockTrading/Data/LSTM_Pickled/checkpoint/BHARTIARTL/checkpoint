@@ -1,0 +1,2 @@
+model_checkpoint_path: "BHARTIARTL_lstm"
+all_model_checkpoint_paths: "BHARTIARTL_lstm"

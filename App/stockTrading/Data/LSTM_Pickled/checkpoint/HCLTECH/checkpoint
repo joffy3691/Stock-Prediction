@@ -1,0 +1,2 @@
+model_checkpoint_path: "HCLTECH_lstm"
+all_model_checkpoint_paths: "HCLTECH_lstm"

@@ -1,0 +1,2 @@
+model_checkpoint_path: "ADANIPORTS_lstm"
+all_model_checkpoint_paths: "ADANIPORTS_lstm"

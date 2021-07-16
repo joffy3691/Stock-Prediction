@@ -1,0 +1,2 @@
+model_checkpoint_path: "BAJAJ-AUTO_lstm"
+all_model_checkpoint_paths: "BAJAJ-AUTO_lstm"

@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+{% extends "website/base.html" %}
+{% load static %}
+{% block content %}
+        {% if stock is not None %}
+        <h1>Chart for {{stock}}</h1>
+        <div class="chart-container">
+
+  <div class="preloader-wrapper big active" style="height: 250px; width: 250px; margin-top: 10%;">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  <h3 class="wait-message" style="margin-top: 4%">Please wait while the model loads...</h3>
+        <canvas id="myAreaChart" width="1300" height="838" style="animation: chartjs-render-animation 1ms;"></canvas>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.0.0/chartjs-plugin-zoom.min.js" integrity="sha512-IhRtzxlPU7PMu47R132Y5BYVZCCuHNcds+Q3Wg2iL11J+fda93ugoQwy+LR2d68l2AudqQsAGhgXbGxSzKS9gA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript">
+            $.get('{% url "line_chart_json" %}?stock={{stock}}', function(data) {
+                var ctx = $("#myAreaChart").get(0).getContext("2d");
+                for(i=0;i < data['datasets'].length; i++)
+                {
+                data['datasets'][i].lineTension = 0;
+                data['datasets'][i].pointRadius = 1;
+                data['datasets'][i].backgroundColor = 'transparent';
+                }
+
+                data['datasets'][0].borderColor = '#665191';
+                data['datasets'][1].borderColor = '#ff6361';
+                data['datasets'][2].borderColor = '#ffa600';
+                
+                window.myAreaChart = new Chart(ctx, 
+                {
+                    type: 'line', 
+                    data: data,    
+                    options: {
+                        responsive: true,
+                        tooltips: { 
+                            backgroundColor: "rgb(255,255,255)",
+                            bodyFontColor: "#858796",
+                            titleMarginBottom: 10,
+                            titleFontColor: '#6e707e',
+                            titleFontSize: 14,
+                            borderColor: '#dddfeb',
+                            borderWidth: 1,
+                            xPadding: 15,
+                            yPadding: 15,
+                            displayColors: false,
+                            intersect: false,
+                            mode: 'index',
+                            caretPadding: 10,
+                            callbacks: {
+                                label: function(tooltipItem, chart) {
+                                var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                                return datasetLabel + ': INR ' + tooltipItem.yLabel;
+                                }
+                            }
+                        },
+                        scales: {
+                            xAxes: [{
+                                time: {
+                                    unit: 'date'
+                                },
+                                gridLines: {
+                                    display: false
+                                },
+                                ticks: {
+                                    maxTicksLimit: 7
+                                }
+                            }],
+                            yAxes:[{
+                                gridLines: {
+                                    display: false
+                                }
+                            }]
+                        },
+                        plugins: {
+                            zoom: {
+                                zoom: {
+                                    drag: {
+                                        enabled: true
+                                    },
+                                    mode: 'xy',
+                                }
+                            }
+                        }
+                    }
+                });
+                $('.preloader-wrapper').hide();
+                $('.wait-message').hide();
+            });
+        </script>
+        <button onclick="resetZoom()">Reset Zoom</button>
+        <script>
+            function resetZoom() {
+                window.myAreaChart.resetZoom();
+            }
+        </script>
+        {% else %}
+        {% endif %}
+{% endblock %}

@@ -1,0 +1,2 @@
+model_checkpoint_path: "POWERGRID_lstm"
+all_model_checkpoint_paths: "POWERGRID_lstm"

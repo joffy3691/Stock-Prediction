@@ -1,0 +1,2 @@
+model_checkpoint_path: "HINDALCO_lstm"
+all_model_checkpoint_paths: "HINDALCO_lstm"

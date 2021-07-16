@@ -1,0 +1,2 @@
+model_checkpoint_path: "BRITANNIA_lstm"
+all_model_checkpoint_paths: "BRITANNIA_lstm"

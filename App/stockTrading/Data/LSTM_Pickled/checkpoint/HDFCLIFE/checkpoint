@@ -1,0 +1,2 @@
+model_checkpoint_path: "HDFCLIFE_lstm"
+all_model_checkpoint_paths: "HDFCLIFE_lstm"

@@ -1,0 +1,2 @@
+model_checkpoint_path: "M&M_lstm"
+all_model_checkpoint_paths: "M&M_lstm"

@@ -1,0 +1,2 @@
+model_checkpoint_path: "TATASTEEL_lstm"
+all_model_checkpoint_paths: "TATASTEEL_lstm"

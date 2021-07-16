@@ -1,0 +1,2 @@
+model_checkpoint_path: "ASIANPAINT_lstm"
+all_model_checkpoint_paths: "ASIANPAINT_lstm"

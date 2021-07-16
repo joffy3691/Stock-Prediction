@@ -1,0 +1,2 @@
+model_checkpoint_path: "BAJFINANCE_lstm"
+all_model_checkpoint_paths: "BAJFINANCE_lstm"

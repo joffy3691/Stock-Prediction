@@ -1,0 +1,174 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page Heading -->
+<style>
+    
+#outer-wrapper {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+#input-price {
+    width: 100%;
+	padding: 40px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+#input-price h2 {
+	margin-bottom: 30px;
+}
+
+.amount {
+	font-size: 1.5rem;
+}
+
+input[type="submit"] {
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 1.25rem;
+	background-color: green;
+	color: white;
+	cursor: pointer;
+}
+
+#table-div {
+	padding: 40px;
+	margin-top: 40px;
+}
+
+#table-div h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#table-div table {
+	width: 100%;
+	text-align: center;
+}
+
+.scrolldown {
+	border-collapse: collapse;
+	overflow-y: scroll;
+	display: inline-block;
+	color: #d4f1f4;
+	background-color: #05445e;
+	border-radius: 10px;
+	width: 100%;
+}
+
+.scrolldown thead th {
+	position: sticky;
+	top: 0;
+}
+
+th,
+td {
+	padding: 10px 20px;
+	text-align: center;
+	width: 500px;
+}
+
+th {
+	background: #189ab4;
+	line-height: 1.75rem;
+}
+
+tr:nth-child(2n) {
+	background-color: #075577;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #d6dee1;
+	border-radius: 20px;
+	border: 6px solid transparent;
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #a8bbbf;
+}
+
+</style>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">{{user.first_name}}Deposit</h1>
+</div>
+<div id="outer-wrapper">
+    <!-- Content Row -->
+    <div class="row">
+        <div id="input-price">
+            
+            <form action="" method="post">
+                {% csrf_token %}
+                <h2>Deposit Amount</h2>
+                <label for="price" class="amount">Amount: </label>
+                <input type="number" name="amount" id="id_amount" required step="0.5" min="1"/>
+                <br><br>
+                <center><input type="submit" name="Submit" value="Submit" /></center>
+            </form>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div id="table-div">
+            <h2>Desposit History</h2>
+            <table class="scrolldown">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for deposit in deposits %}
+                    <tr>
+                        <td>{{deposit.id}}</td>
+                        <td>{{deposit.date}}</td>
+                        <td>{{deposit.amount}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Content Column -->
+    <div class="col-lg-6 mb-4">
+    </div>
+</div>
+<script src="{% static 'website/vendor/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'website/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{% static 'website/vendor/jquery-easing/jquery.easing.min.js'%}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{% static 'website/js/sb-admin-2.min.js'%}"></script>
+
+<!-- Page level plugins -->
+<script src="{% static 'website/vendor/chart.js/Chart.min.js'%}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{% static 'website/js/demo/chart-area-demo.js'%}"></script>
+<script src="{% static 'website/js/demo/chart-pie-demo.js'%}"></script>
+{% endblock %}
