@@ -39,4 +39,5 @@ PORTFOLIO  PAGE:
 
 ![image](https://user-images.githubusercontent.com/70327869/126195119-b1f63c27-1d12-4dad-b9d6-9ed8a1842438.png)
 
-
+## Document
+[Link to Document](https://github.com/vishnu-06/Stock-Prediction/blob/main/Intelligent%20Stock%20Trading.pdf)
