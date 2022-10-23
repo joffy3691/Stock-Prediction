@@ -1,4 +1,4 @@
-##Proposed Methodology:
+## Proposed Methodology:
 
 In the scenario of stocks, trends of the stocks can repeat but the stock price may never repeat itself. In our algorithm, rather than predicting the stock price itself based on past values, we take into consideration the stock trends of the past and use it to predict the future. This stock trend is obtained by using the delta function. We take the delta of everyday and input it into our data-set. Therefore, the output given by our algorithm is also in terms of delta. To obtain the final result we add this delta value to the existing stock price of the previous day.
 
@@ -11,7 +11,7 @@ In our project, after taking the delta as inputs, we train two different models:
 
 The results of multiple researchers show that nonlinear systems performed better than linear ones, and two-model systems performed better than single-model ones. Generally, models that relied on predictions from more than one algorithm had better accuracy in predicting the future stock prices. Hence, we have come up with a two-model prediction system for predicting stock price movements.
 
-##Screenshots: 
+## Screenshots: 
 
 **HOME PAGE**:
 
