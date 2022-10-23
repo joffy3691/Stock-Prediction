@@ -1,4 +1,4 @@
-Proposed Methodology:
+##Proposed Methodology:
 
 In the scenario of stocks, trends of the stocks can repeat but the stock price may never repeat itself. In our algorithm, rather than predicting the stock price itself based on past values, we take into consideration the stock trends of the past and use it to predict the future. This stock trend is obtained by using the delta function. We take the delta of everyday and input it into our data-set. Therefore, the output given by our algorithm is also in terms of delta. To obtain the final result we add this delta value to the existing stock price of the previous day.
 
@@ -11,31 +11,31 @@ In our project, after taking the delta as inputs, we train two different models:
 
 The results of multiple researchers show that nonlinear systems performed better than linear ones, and two-model systems performed better than single-model ones. Generally, models that relied on predictions from more than one algorithm had better accuracy in predicting the future stock prices. Hence, we have come up with a two-model prediction system for predicting stock price movements.
 
-Screenshots: 
+##Screenshots: 
 
-HOME PAGE:
+**HOME PAGE**:
 
 ![image](https://user-images.githubusercontent.com/70327869/126195021-de921175-a06e-408d-8de5-19de714ecc4c.png)
 
-TCS STOCK PREDICTION:
+**TCS STOCK PREDICTION**:
 
 ![image](https://user-images.githubusercontent.com/70327869/126195053-bb6349df-1070-4b88-8282-de887d1b51eb.png)
 
 
-INFY STOCK PREDICTION:
+**INFY STOCK PREDICTION**:
 
 ![image](https://user-images.githubusercontent.com/70327869/126195071-966e7f35-a2cc-4c69-a5d7-72a529685998.png)
 
 
-DEPOSIT PAGE:
+**DEPOSIT PAGE**:
 
 ![image](https://user-images.githubusercontent.com/70327869/126195085-4e7af0fc-fe38-4113-b748-c67583c2ca10.png)
 
-TRADES  PAGE:
+**TRADES  PAGE**:
 
 ![image](https://user-images.githubusercontent.com/70327869/126195098-5e0dda1f-1452-4c1e-bd99-7dbcdb597489.png)
 
-PORTFOLIO  PAGE:
+**PORTFOLIO  PAGE**:
 
 ![image](https://user-images.githubusercontent.com/70327869/126195119-b1f63c27-1d12-4dad-b9d6-9ed8a1842438.png)
 
